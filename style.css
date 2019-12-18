@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.container{
+    display:flex;
+    justify-content: center;
+    background: #efefef;
+    margin: 0 auto;
+}
+.camera{
+    background: #37b0ae;
+    width:452px;
+    height: 615px;
+    position: relative;
+    top: 55px;
+}
+.camera__text{
+    font-size: 30px;
+    color: white;
+    padding: 12px 12px;
+}
+
+.camera__image{
+    position: absolute;
+    top:100px;
+    left:-45px;
+    max-width:447px;
+    max-height: 450px;
+}
+.camera__image:hover{
+    transform: scale(1.2) translateX(-50px);
+
+}
+.camera__image::after{
+    content:'';
+    background: url("img/camera-shadow.png") no-repeat center/cover;
+    width: 530px;
+    height: 300px;
+    display: inline-block;
+    position: absolute;
+    top:250px;
+    left:10px;
+}
+
+.foto{
+    position:absolute;
+    top:150px;
+    left:407px;
+    z-index: 10;
+}
+.foto__image{
+    background:rgba(255, 255, 255,0.5);
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px;
+}
+.foto__image:hover{
+    z-index: 13;
+    transform: scale(1.8);
+}
+.foto__image img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+.foto__image-small{
+    width: 90px;
+    height: 94px;
+}
+.foto__image-small img{
+    width: 152px;
+    height: 152px;
+    object-fit: cover;
+    object-position:-61px -30px;
+}
+
+.product{
+    background: white;
+    width:520px;
+    height:705px;
+    position:relative;
+    top: 10px;
+    padding-left: 80px;
+}
+h1{
+    padding-top: 70px;
+    font-family: 'Myriad Pro', serif;
+    font-size: 31pt;
+}
+h2{
+    font-family: 'Myriad Pro', serif;
+    font-size: 15pt;
+}
+h3{
+    padding-top: 50px;
+    font-family: 'Myriad Pro', serif;
+    font-size: 13pt;
+}
+.description{
+    padding-top:10px;
+    line-height: 1.8;
+    list-style: none;
+    font-size: 13pt;
+}
+.description li::before{
+    content: '';
+    display: inline-block;
+    background: #37b0ae;
+    width:7px;
+    height: 7px;
+    margin-right: 7px;
+}
+.box{
+    display: flex;
+    list-style: none;
+    padding-top:40px;
+}
+.box li{
+    margin-right: 30px;
+    font-size: 12pt;
+}
+.quantity p{
+    padding-top: 20px;
+    padding-bottom: 7px;
+    font-size: 12pt;
+}
+.button{
+    display:flex;
+    margin:0;
+    vertical-align:top;
+}
+.button__increase, .button__decrease{
+    width: 42px;
+    height: 36px;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+}
+.button__increase::before, .button__decrease::before, .button__increase::after{
+    content:'';
+    height: 1px;
+    background: black;
+    top: 50%;
+    left:25%;
+    width:40%;
+    position: absolute;
+    bottom: 50%;
+}
+.button__increase::after{
+    transform:  rotate(90deg);
+}
+input{
+    font-size: 19px;
+    width: 42px;
+    height: 36px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    text-align: center;
+}
+.price{
+    padding-top: 15px;
+    display:flex;
+    align-items: flex-end;
+}
+.price__new{
+    font-size: 43px;
+    font-family: 'Myriad Pro', serif;
+}
+.price__old{
+    padding-left:12px ;
+    padding-bottom: 6px;
+    font-size: 20px;
+    font-family: 'Myriad Pro', serif;
+}
+
+.add{
+    display:flex;
+    padding-top: 15px;
+}
+.add__cart{
+    font-size: 23px;
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+    background: #37b0ae;
+    width:220px ;
+    height:35px ;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.add__wish{
+    font-size: 23px;
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid black;
+    width:220px ;
+    height:34px ;
+    cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+    .container{
+        display: block;
+
+    }
+    .camera{
+        width: 100%;
+        height: auto;
+        top:0;
+
+    }
+    .camera__image::after{
+        position: static;
+        margin-top: -200px;
+
+    }
+    .camera__image{
+        margin:0 auto;
+        position: static;
+    }
+    .foto{
+        position: static;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+
+    }
+    .foto__image{
+        margin-right:10px ;
+    }
+    .productInfo{
+        width: calc(100% - 40px);
+        height: auto;
+        top:0;
+        padding-left: 40px ;
+    }
+}
+@media screen and (max-width: 768px) {
+    .camera__image img{
+        max-width:397px;
+        max-height: 400px;
+    }
+    .camera__image::after {
+        width: 480px;
+        height: 250px;
+    }
+    .productInfo{
+        width: calc(100% - 30px);
+        padding-left:30px ;
+    }
+}
+@media screen and (max-width: 470px) {
+    .camera__image, .camera__image img{
+        max-width:257px;
+        max-height: 360px;
+    }
+    .camera__image::after {
+        width: 320px;
+        height: 110px;
+    }
+    .camera__text {
+        padding: 12px 35px;
+    }
+    .foto__image img{
+        width: 60px;
+        height: 60px;
+    }
+    .foto__image-small{
+        width: 60px;
+        height: 64px;
+    }
+    .foto__image-small img{
+        width: 110px;
+        height: 110px;
+        object-position:-46px -22px;
+
+    }
+    h1{
+        padding-top: 40px;
+        font-family: 'Myriad Pro', serif;
+        font-size: 26pt;
+    }
+    h2{
+        font-family: 'Myriad Pro', serif;
+        font-size: 11pt;
+    }
+    h3{
+        padding-top: 30px;
+        font-size: 10pt;
+    }
+    .description,  .quantity p {
+        font-size: 10pt;
+    }
+    .box li{
+        margin-right: 25px;
+        font-size: 10pt;
+    }
+    .button__increase, .button__decrease, input{
+        width: 37px;
+        height: 31px;
+    }
+    .add__cart, .add__wish{
+        font-size: 16px;
+        width: 130px;
+        height: 23px;
+    }
+
+}
